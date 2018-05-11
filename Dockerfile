@@ -12,7 +12,7 @@ RUN wget -q http://central.maven.org/maven2/org/jmxtrans/jmxtrans/259/jmxtrans-2
 ENV JAR_FILE jmxtrans-259-all.jar
 ENV USE_JPS false
 ENV JMX_PORT 1099
-ENV JVM_CONFIG_PATH https://raw.githubusercontent.com/jmx-stats/master/jmx-stats/jvm.json
+ENV JVM_CONFIG_PATH https://raw.githubusercontent.com/corpwebgames/docker-jmx-stats/master/jvm.json
 
 ADD run.sh /run.sh
 
