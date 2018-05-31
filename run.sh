@@ -3,7 +3,11 @@
 instance=$(wget -q -O - http://169.254.169.254/latest/meta-data/instance-id)
 wget -q $JVM_CONFIG_PATH
 
-export JAVA_OPTS="$JAVA_OPTS -DALIAS_NODE=$instance"
+if [ ! -z "$ALB_TARGET_NAME" ]; then
+ alb_target_arn=`aws elbv2 --region us-east-1 describe-target-groups --names $ALB_TARGET_NAME --output text --query "TargetGroups[].TargetGroupArn" | cut -d ':' -f 6 `
+fi
+
+export JAVA_OPTS="$JAVA_OPTS -DALIAS_NODE=$instance -DALB_TARGET=$alb_target_arn"
 
 echo $JAVA_OPTS
 

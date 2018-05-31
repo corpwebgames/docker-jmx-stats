@@ -13,7 +13,7 @@
               "database": "${DB_NAME}",
               "username": "${DB_USER}",
               "password": "${DB_PASS}",
-              "tags" : {"instance" : "${ALIAS_NODE}"}
+              "tags" : {"instance" : "${ALIAS_NODE}", "alb_target" : "${ALB_TARGET}"}
             }
           ],
           "obj": "Catalina:j2eeType=Servlet,name=*,WebModule=//localhost/,J2EEApplication=none,J2EEServer=none",

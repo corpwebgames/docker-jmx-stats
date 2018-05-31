@@ -4,10 +4,10 @@ RUN wget -q http://central.maven.org/maven2/org/jmxtrans/jmxtrans/259/jmxtrans-2
     wget -q https://raw.githubusercontent.com/jmxtrans/jmxtrans/master/jmxtrans/jmxtrans.sh && \
     chmod +x jmxtrans.sh
 
-# RUN apk add --update python3 && \
-#     python3 -m ensurepip --upgrade && \
-#     pip3 install awscli && \
-#     rm -rf /var/cache/apk/*
+ RUN apk add --update python3 && \
+     python3 -m ensurepip --upgrade && \
+     pip3 install awscli && \
+     rm -rf /var/cache/apk/*
 
 ENV JAR_FILE jmxtrans-259-all.jar
 ENV USE_JPS false
